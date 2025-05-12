@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB7E56B02DBDB8AD0048553A /* Svauna Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB7E56AF2DBDB8AD0048553A /* Svauna Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB7E571B2DBDBC8D0048553A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CB7E571A2DBDBC880048553A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,11 +70,44 @@
 		CB7E56AF2DBDB8AD0048553A /* Svauna Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Svauna Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7E56C12DBDB8AF0048553A /* Svauna Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Svauna Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7E56CB2DBDB8AF0048553A /* Svauna Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Svauna Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB7E571A2DBDBC880048553A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CB0EFAC82DC0A00D00343150 /* Exceptions for "Svauna Watch App" folder in "Svauna" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/BloodOxygenDataPoint.swift,
+				Models/CaloriesDataPoint.swift,
+				Models/Getters/Timestamped.swift,
+				Models/HeartRateDataPoint.swift,
+				Models/Session.swift,
+				Models/SessionSegment.swift,
+				Models/SessionState.swift,
+				Models/SessionType.swift,
+				Theme/ColorPallete.swift,
+			);
+			target = CB7E56882DBDB8AA0048553A /* Svauna */;
+		};
+		CB60549E2DC32B6000273E8F /* Exceptions for "Svauna" folder in "Svauna Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Models/CDSession+CoreDataClass.swift",
+				"Models/CDSession+CoreDataProperties.swift",
+				Services/Persistence/SessionPersistenceService.swift,
+				SvaunaModel.xcdatamodeld,
+				Views/AnimatedViews/AnimatedGradientBackground.swift,
+			);
+			target = CB7E56AE2DBDB8AD0048553A /* Svauna Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CB7E568B2DBDB8AA0048553A /* Svauna */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CB60549E2DC32B6000273E8F /* Exceptions for "Svauna" folder in "Svauna Watch App" target */,
+			);
 			path = Svauna;
 			sourceTree = "<group>";
 		};
@@ -89,6 +123,9 @@
 		};
 		CB7E56B32DBDB8AD0048553A /* Svauna Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CB0EFAC82DC0A00D00343150 /* Exceptions for "Svauna Watch App" folder in "Svauna" target */,
+			);
 			path = "Svauna Watch App";
 			sourceTree = "<group>";
 		};
@@ -153,6 +190,7 @@
 		CB7E56802DBDB8A90048553A = {
 			isa = PBXGroup;
 			children = (
+				CB7E571A2DBDBC880048553A /* README.md */,
 				CB7E568B2DBDB8AA0048553A /* Svauna */,
 				CB7E569C2DBDB8AC0048553A /* SvaunaTests */,
 				CB7E56A62DBDB8AC0048553A /* SvaunaUITests */,
@@ -380,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7E571B2DBDBC8D0048553A /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,13 +652,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Svauna Watch App/Svauna Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svauna Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = Q33NRZQY26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Svauna-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Svauna;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to track sauna and cold plunge sessions and metrics.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We update your HealthKit workouts for tracking your sauna and cold plunge sessions.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.awesoontechnologies.Svauna;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,6 +670,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.awesoontechnologies.Svauna.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -643,13 +687,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Svauna Watch App/Svauna Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svauna Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = Q33NRZQY26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Svauna-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Svauna;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We use your health data to track sauna and cold plunge sessions and metrics.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We update your HealthKit workouts for tracking your sauna and cold plunge sessions.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.awesoontechnologies.Svauna;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -657,6 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.awesoontechnologies.Svauna.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -674,6 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svauna/Svauna.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svauna/Preview Content\"";
@@ -681,6 +731,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Svauna;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app records your workout and recovery data to and from your Health app, including heart rate and calories burned";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app records your workout and recovery data to your Health app, including heart rate and calories burned";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -695,9 +747,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.awesoontechnologies.Svauna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -706,6 +761,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Svauna/Svauna.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Svauna/Preview Content\"";
@@ -713,6 +769,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Svauna;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "This app records your workout and recovery data to and from your Health app, including heart rate and calories burned";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "This app records your workout and recovery data to your Health app, including heart rate and calories burned";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -727,9 +785,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.awesoontechnologies.Svauna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
